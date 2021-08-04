@@ -38,7 +38,7 @@ namespace MVCTest.Repository
                 users = users.Where(user => user.Birthdate > Convert.ToDateTime(startDate) && user.Birthdate < Convert.ToDateTime(endDate));
             
             if (!string.IsNullOrEmpty(email))
-                users = users.Where(user => user.Email == email);
+                users = users.Where(user => user.Email.Contains(email));
 
             if (!string.IsNullOrEmpty(startDate))
                 users = users.Where(user => user.Birthdate > Convert.ToDateTime(startDate));
